@@ -1,0 +1,47 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+.background {
+	position: absolute;
+	width: 1024px;
+	height: 768px;
+	z-index: 1;
+}
+
+.switchOut1 {
+	position: absolute;
+  left: 119px;
+  top: 336px;
+  width: 351px;
+  height: 193px;
+	z-index: 10;
+}
+
+.switchOut2 {
+	position: absolute;
+  left: 489px;
+  top: 336px;
+  width: 392px;
+  height: 193px;
+	z-index: 10;
+}
+
+.switchOut3 {
+	position: absolute;
+  left: 119px;
+  top: 538px;
+  width: 351px;
+  height: 193px;
+	z-index: 10;
+}
+
+.switchOut4 {
+	position: absolute;
+  left: 489px;
+  top: 538px;
+  width: 392px;
+  height: 193px;
+	z-index: 10;
+}

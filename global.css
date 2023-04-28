@@ -9,8 +9,8 @@ body {
 }
 #container {
 	position: absolute;
-	width: 1280px;
-	height: 726px;
+	width: 1024px;
+	height: 768px;
 	background-color: #232E3D;
 	font-family: 'DINOT', 'Helvetica Neue', sans-serif;
 	overflow: hidden;
@@ -198,7 +198,7 @@ html[xmlns] .clearfix {
 	background-repeat: no-repeat;
 	position: absolute;
 	bottom: 0px;
-	left: 38px;
+	right: 40px;
 	display: block;
 	width: 56px;
 	height: 20px;
@@ -236,4 +236,13 @@ html[xmlns] .clearfix {
 	border: 1px solid red;
 	background-color: rgba(0,0,0,0.5);
 	color: #ffffff;
+}
+
+.takeHome {
+  position: absolute;
+  left: 0px;
+  top: 697px;
+  width: 47px;
+  height: 71px;
+  z-index: 20;
 }
