@@ -10,6 +10,42 @@
 	z-index: 1;
 }
 
+.intro {
+  position: absolute;
+  left: 71px;
+  top: 444px;
+  width: 197px;
+  height: 38px;
+  animation: fadeInUp 1s;
+  animation-delay: 0s;
+  animation-fill-mode: both;
+  z-index: 5;
+}
+
+.logo {
+  position: absolute;
+  left: 51px;
+  top: 485px;
+  width: 450px;
+  height: 139px;
+  animation: zoomIn 0.5s;
+  animation-delay: 1s;
+  animation-fill-mode: both;
+  z-index: 10;
+}
+
+.punch {
+  position: absolute;
+  left: 152px;
+  top: 640px;
+  width: 246px;
+  height: 31px;
+  animation: fadeInRight 0.5s;
+  animation-delay: 1s;
+  animation-fill-mode: both;
+  z-index: 2;
+}
+
 .hit_1, .hit_2, .hit_3, .hit_4 {
   position: absolute;
   width: 1024px;
