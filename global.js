@@ -249,7 +249,7 @@ currentSlide();
 var selectedContentPath='';
 switch(pg_id){
 	case 1:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div class="chain" onclick="chainbreak()"><img src="slide1/1.jpg" width="1024" height="768" alt=""></div><div class="break"><img src="slide1/2.jpg" width="1024" height="768" alt=""></div><div class="logo"><img src="slide1/3.jpg" width="1024" height="768" alt=""></div>';
+	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div class="s1_1"><img src="slide1/s1_1.png" width="1024" height="768" alt=""></div><div class="s1_2"><img src="slide1/s1_2.png"></div><div class="s1_3"><img src="slide1/s1_3.png"></div><div class="s1_4"><img src="slide1/s1_4.png"></div><div class="s1_5"><img src="slide1/s1_5.png" width="1024" height="768" alt=""></div><div class="s1_6"><img src="slide1/s1_6.png" width="1024" height="768" alt=""></div><div class="chainbreak" onclick="chainbreak()"></div>';
 	break;
 
 }
@@ -407,7 +407,8 @@ $(document).ready(function(){
 
 
 function chainbreak() {
-	$('.chain').css("display","none");
-	$('.break').css("display","block");
-	$('.logo').css("display","block");
+	$('.s1_1').css("display","none");
+	$('.s1_4').css("display","none");
+	$('.s1_5').css("display","block");
+	$('.s1_6').css("display","block");
 }
