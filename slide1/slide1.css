@@ -39,7 +39,7 @@
 
 .flashLight {
   	animation: flashLight 0.1s infinite;
-	animation-delay: 0.6s;
+	animation-delay: 0.9s;
 	animation-fill-mode: both;
 }
 
@@ -49,19 +49,29 @@
   top: 233px;
   width: 378px;
   height: 270px;
-  	animation: flashLight 0.5s infinite;
+  	animation: flashLong 2s infinite;
 	animation-delay: 0s;
 	animation-fill-mode: both;
 	z-index: 8;
 }
 
-@keyframes flashLight {
+@keyframes flashLong {
   0%,  100% {
-    opacity: 0.8;
+    opacity: 0.7;
   }
 
   25%, 50%, 75% {
     opacity: 1;
+  }
+}
+
+@keyframes flashLight {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.5;
   }
 }
 
@@ -87,11 +97,29 @@
   top: 0px;
   width: 1024px;
   height: 768px;
-    animation: fadeInRight 0.5s;
+    animation: fadeInRightLong 1s;
 	animation-delay: 1.5s;
 	animation-fill-mode: both;
 	display: none;
 	z-index: 5;
+}
+
+@keyframes fadeInRightLong {
+
+
+  0% {
+    opacity: 0;
+	left: 0px;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+	left: -400px;
+    -webkit-transform: none;
+    transform: none;
+  }
 }
 
 .s1_5 {
@@ -99,7 +127,7 @@
   width: 1024px;
   height: 768px;
   animation: revealFull 0.5s;
-  animation-delay: 3s;
+  animation-delay: 3.5s;
   animation-fill-mode: both;
   clip: rect(768px,0px,0px,1024px);
   display: none;
