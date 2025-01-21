@@ -47,7 +47,7 @@
         $('#spoken-text').text(`You said: "${transcript}"`);
 
         // Check if the recognized phrase is "Give to leo"
-        if (transcript.toLowerCase() === 'give to live' || transcript.toLowerCase() === 'give to leave' || transcript.toLowerCase() === 'give two live' || transcript.toLowerCase() === 'give two leave') {
+        if (transcript.toLowerCase() === 'give to live' || transcript.toLowerCase() === 'give to leave' || transcript.toLowerCase() === 'give two live' || transcript.toLowerCase() === 'give two leave' || transcript.toLowerCase() === 'give to lio' || transcript.toLowerCase() === 'give to leo' || transcript.toLowerCase() === 'give two lio' || transcript.toLowerCase() === 'give two leo') {
           $('body').css('background-color', 'red');
         }
       };
