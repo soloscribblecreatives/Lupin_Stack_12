@@ -1,0 +1,61 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+.background {
+	position: absolute;
+	width: 1024px;
+	height: 768px;
+	z-index: 1;
+}
+
+.s1 {
+	position: absolute;
+	width: 1024px;
+	height: 768px;
+	z-index: 1;
+}
+
+.s2 {
+	position: absolute;
+  left: 237px;
+  top: 103px;
+  width: 559px;
+  height: 64px;
+	animation: flipInX 0.5s;
+	animation-delay: 0s;
+	animation-fill-mode: both;
+	z-index: 5;
+}
+
+.s3 {
+	position: absolute;
+  left: 768px;
+  top: 386px;
+  width: 53px;
+  height: 54px;
+	animation: rotateInLoop 2s infinite linear;
+	animation-delay: 0s;
+	animation-fill-mode: both;
+	z-index: 5;
+}
+
+@keyframes flashIt {
+  0%, 50%, 100% {
+    opacity: 0.5;
+  }
+
+  25%, 75% {
+    opacity: 1;
+  }
+}
+
+@keyframes rotateInLoop {
+	0%  {
+		-webkit-transform: rotate(0deg);
+	}
+	100%	{
+		-webkit-transform: rotate(359deg);
+	}
+}

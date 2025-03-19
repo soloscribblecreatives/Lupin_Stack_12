@@ -1,0 +1,121 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+.board {
+	position: absolute;
+	width: 1024px;
+	height: 768px;
+	z-index: 1;
+}
+
+.cover {
+	position: absolute;
+	width: 1024px;
+	height: 768px;
+	display: none;
+	z-index: 2;
+}
+
+.success {
+	position: absolute;
+	width: 1024px;
+	height: 768px;
+	display: none;
+	z-index: 20;
+}
+
+.brand {
+	position: absolute;
+	width: 1024px;
+	height: 768px;
+	display: none;
+	z-index: 25;
+}
+
+.home {
+  position: absolute;
+  left: 928px;
+  top: 672px;
+  width: 56px;
+  height: 56px;
+    animation: flashLong 2s infinite;
+    animation-delay: 0s;
+    animation-fill-mode: both;
+	display: none;
+  z-index: 35;
+}
+
+.button1 {
+	position: absolute;
+  left: 331px;
+  top: 569px;
+  width: 361px;
+  height: 68px;
+  	animation: pulse 1s infinite;
+    animation-delay: 0s;
+    animation-fill-mode: both;
+	z-index: 777;
+}
+
+.video1 {
+	position: absolute;
+	width: 1024px;
+	height: 670px;
+	display: none;
+	z-index:5;
+}
+
+.button2 {
+	position: absolute;
+  left: 739px;
+  top: 263px;
+  width: 193px;
+  height: 143px;
+	display: none;
+	animation: pulse 1s infinite;
+    animation-delay: 0s;
+    animation-fill-mode: both;
+	z-index: 888;
+}
+
+.video2 {
+	position: absolute;
+	width: 1024px;
+	height: 670px;
+	display: none;
+	z-index:10;
+}
+
+.button3 {
+	position: absolute;
+  left: 739px;
+  top: 263px;
+  width: 193px;
+  height: 143px;
+	display: none;
+	animation: pulse 1s infinite;
+    animation-delay: 0s;
+    animation-fill-mode: both;
+	z-index: 999;
+}
+
+.video3 {
+	position: absolute;
+	width: 1024px;
+	height: 670px;
+	display: none;
+	z-index:15;
+}
+
+
+@keyframes flashLong {
+  0%,  100% {
+    opacity: 0;
+  }
+
+  25%, 50%, 75% {
+    opacity: 1;
+  }
+}

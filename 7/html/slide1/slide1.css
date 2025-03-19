@@ -1,0 +1,236 @@
+@font-face {
+    font-family: Arinoe;
+    src: url('Arinoe.otf');
+}
+
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+#score {
+	position: absolute;
+	left: 873px;
+    top: 50px;
+    width: 85px;
+    height: 56px;
+	font-size: 80px;
+	font-family: "arinoe";
+	color: #fff;
+	background: transparent;
+	outline: none;
+	border: none;
+	text-align: center;
+	z-index: 999;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+.s1_1 {
+	position: absolute;
+	width: 1024px;
+	height: 768px;
+	z-index: 1;
+}
+
+.s1_2 {
+	position: absolute;
+  left: 71px;
+  top: 63px;
+  width: 508px;
+  height: 115px;
+	animation: flipInX 0.5s;
+	animation-delay: 0s;
+	animation-fill-mode: both;
+	z-index: 5;
+}
+
+.s1_3 {
+	position: absolute;
+  left: 0px;
+  top: 253px;
+  width: 727px;
+  height: 361px;
+	animation: revealHorizontal 5s;
+	animation-delay: 1s;
+	transition-timing-function: linear;
+	animation-fill-mode: both;
+	z-index: 5;
+}
+
+.s1_4 {
+	position: absolute;
+  left: 14px;
+  top: 378px;
+  width: 230px;
+  height: 252px;
+	animation: zoomIn 0.5s;
+	animation-delay: 1.2s;
+	animation-fill-mode: both;
+	z-index: 7;
+}
+
+.s1_5 {
+	position: absolute;
+  left: 246px;
+  top: 398px;
+  width: 98px;
+  height: 72px;
+	animation: bounceIn 0.5s;
+	animation-delay: 1.8s;
+	animation-fill-mode: both;
+	z-index: 7;
+}
+
+.s1_6 {
+	position: absolute;
+  left: 441px;
+  top: 302px;
+  width: 74px;
+  height: 101px;
+	animation: bounceIn 0.5s;
+	animation-delay: 2.3s;
+	animation-fill-mode: both;
+	z-index: 7;
+}
+
+.s1_7 {
+	position: absolute;
+  left: 610px;
+  top: 126px;
+  width: 196px;
+  height: 267px;
+	animation: bounceIn 0.5s;
+	animation-delay: 2.6s;
+	animation-fill-mode: both;
+	z-index: 3;
+}
+
+.s1_8 {
+	position: absolute;
+  left: 661px;
+  top: 506px;
+  width: 307px;
+  height: 215px;
+	animation: fadeInRight 0.5s;
+	animation-delay: 3.3s;
+	animation-fill-mode: both;
+	z-index: 5;
+}
+
+.s1_9 {
+	position: absolute;
+  left: 82px;
+  top: 95px;
+  width: 287px;
+  height: 304px;
+	animation: zoomIn 0.1s;
+	animation-delay: 0s;
+	animation-fill-mode: both;
+	display: none;
+	z-index: 5;
+}
+
+.s1_10 {
+	position: absolute;
+  left: 405px;
+  top: 106px;
+  width: 268px;
+  height: 123px;
+	animation: tadaLight 1s infinite;
+	animation-delay: 0s;
+	animation-fill-mode: both;
+	z-index: 5;
+}
+
+.s1_11 {
+	position: absolute;
+  left: 654px;
+  top: 122px;
+  width: 271px;
+  height: 151px;
+	animation: tadaLight 1s infinite;
+	animation-delay: 0s;
+	animation-fill-mode: both;
+	z-index: 5;
+}
+
+.s1_12 {
+	position: absolute;
+  left: 702px;
+  top: 556px;
+  width: 152px;
+  height: 173px;
+	animation: tadaLight 1s infinite;
+	animation-delay: 0s;
+	animation-fill-mode: both;
+	z-index: 5;
+}
+
+.s1_13 {
+	position: absolute;
+  left: 436px;
+  top: 258px;
+  width: 147px;
+  height: 182px;
+	animation: tadaLight 1s infinite;
+	animation-delay: 0s;
+	animation-fill-mode: both;
+	z-index: 5;
+}
+
+.s1_14 {
+	position: absolute;
+	width: 1024px;
+	height: 768px;
+	display: none;
+	z-index: 25;
+}
+
+
+@keyframes revealHorizontal {
+  0% {
+    clip: rect(0px,0px,400px,0px);
+	opacity: 1;
+  }
+  
+  100% {
+    clip: rect(0px,1200px,400px,0px);
+	opacity: 1;
+  }
+}
+
+@keyframes tadaLight {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  10%,
+  20% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -1deg);
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -1deg);
+  }
+
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 1deg);
+    transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 1deg);
+  }
+
+  40%,
+  60%,
+  80% {
+    -webkit-transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, -1deg);
+    transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, -1deg);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}

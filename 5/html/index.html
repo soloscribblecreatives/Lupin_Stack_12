@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="animate.css">
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="jquery.min.js"></script>
+	
+<style>
+	
+	* {
+		margin: 0px;
+		Padding: 0px;
+	}
+
+	.background {
+		position: relative;
+		background-image: url("Molecular.jpg");
+		background-size: cover;
+		width: 1024px;
+		height: 768px;
+		margin: auto;
+		text-align: center;
+		z-index: 1;
+	}
+	
+	.viruslist {
+		position: absolute;
+		background-color: rgba(0, 0, 0, 0.85);
+		color: #fff;
+		width: 1024px;
+		height: 768px;
+		top: -740px;
+		z-index: 100;
+		cursor: pointer;
+		transition: top 1000ms ease-in-out;
+	}
+	
+	.virustype {
+		position: relative;
+		margin-top: 20px;
+		font-size: 2.5em;
+		font-family: 'DK Cool Crayon';
+	}
+	
+	.virustype:first-child {
+		margin-top: 40px;
+		margin-bottom: 40px;
+		color: #B2FF66;
+	}
+	
+	.virustype:last-child {
+		margin: 50px auto;
+		font-size: 1.5em;
+		color: #B2FF66;
+		width: 800px;
+		animation-name: pulse;
+		-webkit-animation-name: pulse;
+		animation-duration: 1s;
+		-webkit-animation-duration: 1s;
+		animation-delay: 0s;
+		-webkit-animation-delay: 0s;
+		animation-iteration-count: infinite;
+		-webkit-animation-iteration-count: infinite;
+		animation-fill-mode: forwards;
+		-webkit-animation-fill-mode: forwards;
+	}
+	
+	.virushint {
+		position: absolute;
+		background-color: rgba(0, 0, 0, 0.85);
+		font-family: 'DK Cool Crayon';
+		color: #fff;
+		bottom: 0px;
+		height: 30px;
+		width: 1024px;
+		line-height: 2em;
+		z-index: 110;
+		cursor: pointer;
+		transition: bottom 1000ms ease-in-out;
+	}
+	
+	.databox-wrap {
+		position: relative;
+		padding: 0px;
+		margin: auto;
+		height: 30px;
+		width: 500px;
+		top: 100px;
+		z-index: 50;
+	}
+	
+	.databox {
+		text-align: center;
+		background: transparent;
+		border: none;
+		outline:none;
+		color: #B2FF66;;
+		font-size: 40px;
+		font-family: 'DK Cool Crayon';
+		z-index: 50;
+	}
+	
+	input::placeholder {
+		color: #fff;
+		opacity: 0.5;
+		font-family: 'DK Cool Crayon';
+		transition: color 300ms ease-in-out, opacity 300ms ease-in-out;
+	}
+	
+	input:focus::placeholder {
+		color: #B2FF66;
+		opacity: 1;
+	}
+	
+	.clickme {
+		position: relative;
+		top: 120px;
+		width: 170px;
+		height: 60px;
+		font-size: 1.5em;
+		line-height: 2.5em;
+		font-family: 'Jokerman';
+		margin: 20px auto;
+		background-color: transparent;
+		border: 2px solid #fff;
+		border-radius: 0.5em;
+		color: #fff;
+		opacity: 0.5;
+		cursor: pointer;
+		text-decoration: none;
+		text-align: center;
+		transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out, opacity 300ms ease-in-out;
+	}
+
+	.clickme:hover {
+		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7), 0 0 50px #fff;
+		opacity: 1;
+	}
+	
+	.viruses > * {
+		position: relative;
+		margin: 170px auto;
+		display: none;
+		z-index:5;
+	}
+		
+	.introvirus {
+		width: 800px;
+		animation-name: pulse;
+		-webkit-animation-name: pulse;
+		animation-duration: 1s;
+		-webkit-animation-duration: 1s;
+		animation-delay: 0s;
+		-webkit-animation-delay: 0s;
+		animation-iteration-count: infinite;
+		-webkit-animation-iteration-count: infinite;
+		animation-fill-mode: forwards;
+		-webkit-animation-fill-mode: forwards;
+		display: block;
+	}
+	
+	.wipeOut {
+		position: relative;
+		height: 0px;
+		margin: 170px auto;
+		animation-name: zoomOutDown;
+		-webkit-animation-name: zoomOutDown;
+		animation-duration: 1s;
+		-webkit-animation-duration: 1s;
+		animation-delay: 0s;
+		-webkit-animation-delay: 0s;
+		animation-iteration-count: 1;
+		-webkit-animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+		-webkit-animation-fill-mode: forwards;
+		z-index:5;
+	}
+	
+	.playIn {
+		position: relative;
+		height: 0px;
+		margin: 170px auto;
+		animation-name: zoomInUp;
+		-webkit-animation-name: zoomInUp;
+		animation-duration: 1s;
+		-webkit-animation-duration: 1s;
+		animation-delay: 0s;
+		-webkit-animation-delay: 0s;
+		animation-iteration-count: 1;
+		-webkit-animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+		-webkit-animation-fill-mode: forwards;
+		z-index:5;
+	}
+	
+	.alertmsg {
+		position: relative;
+		height: 80px;
+		font-size: 2.5em;
+		padding: 0px;
+		font-family: 'Squeaky Chalk Sound';
+		background-color: rgba(0, 0, 0, 0.5);
+		bottom: -170px;
+		text-align: center;
+		line-height: 2.2em;
+		margin: auto;
+		display: none;
+		color: #fff;
+		animation-name: fadeInUp;
+		-webkit-animation-name: fadeInUp;
+		animation-duration: 1s;
+		-webkit-animation-duration: 1s;
+		animation-delay: 0s;
+		-webkit-animation-delay: 0s;
+		animation-iteration-count: 1;
+		-webkit-animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+		-webkit-animation-fill-mode: forwards;
+		box-shadow: 0 10px 25px rgba(0, 181, 204, 1);
+		z-index: 15;
+	}
+</style>
+</head>
+
+<body>
+
+	<div class="background">
+	
+	<div class="viruslist" id="viruslist" onclick="maskviruslist()">
+		<div class="virustype" id="virustype">Types of Viruses</div>
+		<div class="virustype" id="virustype">1. POLIO</div>
+		<div class="virustype" id="virustype">2. RHINO</div>
+		<div class="virustype" id="virustype">3. EBOLA</div>
+		<div class="virustype" id="virustype">4. HANTA</div>
+		<div class="virustype" id="virustype">5. CORONA</div>
+		<div class="virustype" id="virustype">6. MEASLES</div>
+		<div class="virustype" id="virustype">7. INFLUENZA</div>	
+		<div class="virustype" id="virustype">Please enter uppercase case letters only!</div>		
+	</div>
+	<div class="virushint" onclick="revealviruslist()" id="virushint">Click here to view types of viruses!</div>
+	
+	<div class="databox-wrap">
+		<input type="text" class="form-control databox" id="myText" placeholder="Enter A Virus" name="text1" value="" autocomplete="off"/>
+	</div>
+	
+	<div class="clickme" id="clickme">INFECT</div>
+	<!-- <input type="image" src="Infect.png" class="clickme" id="clickme"> -->
+	
+	<div class="viruses">
+		<div class="introvirus" id="introvirus">
+			<img src="Introvirus.png" alt="Introvirus" width="40%">
+		</div>
+		<div class="rhinovirus" id="rhinovirus">
+			<img src="Rhinovirus.png" alt="Rhinovirus" width="30%"> 
+		</div>
+		<div class="coronavirus" id="coronavirus">
+			<img src="Coronavirus.png" alt="Coronavirus" width="30%">
+		</div>
+		<div class="ebolavirus" id="ebolavirus">
+			<img src="Ebolavirus.png" alt="Ebolavirus" width="35%">
+		</div>
+		<div class="hantavirus" id="hantavirus">
+			<img src="Hantavirus.png" alt="Hantavirus" width="30%">
+		</div>
+		<div class="influenzavirus" id="influenzavirus">
+			<img src="Influenzavirus.png" alt="influenzavirus" width="30%">
+		</div>
+		<div class="poliovirus" id="poliovirus">
+			<img src="Poliovirus.png" alt="poliovirus" width="30%">
+		</div>
+		<div class="measlevirus" id="measlevirus">
+			<img src="Measlevirus.png" alt="measlevirus" width="30%">
+		</div>
+	</div>
+	
+	<div class="alertmsg">Please enter correct virus name!</div>
+</div>
+<script>
+$("#myText").change(function() {
+	$("#clickme").click(function() {
+		if ($("#myText").val() == "RHINO")
+		{
+			setTimeout(function(){	
+				$(".viruses").children().not(".rhinovirus").stop(true).removeClass("playIn");
+				$(".viruses").children().not(".rhinovirus").stop(true).addClass("wipeOut");
+				$(".alertmsg").stop(true).hide();
+			}, 100);
+			setTimeout(function(){
+				$(".viruses").children().not(".rhinovirus").stop(true).hide();
+				$(".rhinovirus").stop(true).addClass("playIn");
+				$(".rhinovirus").stop(true).show();
+			}, 1000);
+		}
+		else if ($("#myText").val() == "CORONA")
+		{
+			setTimeout(function(){
+				$(".viruses").children().not(".coronavirus").stop(true).removeClass("playIn");
+				$(".viruses").children().not(".coronavirus").stop(true).addClass("wipeOut");
+				$(".alertmsg").stop(true).hide();
+			}, 100);
+			setTimeout(function(){
+				$(".viruses").children().not(".coronavirus").stop(true).hide();
+				$(".coronavirus").stop(true).addClass("playIn");
+				$(".coronavirus").stop(true).show();
+			}, 1000);
+		}
+		else if ($("#myText").val() == "EBOLA")
+		{
+			setTimeout(function(){
+				$(".viruses").children().not(".ebolavirus").stop(true).removeClass("playIn");
+				$(".viruses").children().not(".ebolavirus").stop(true).addClass("wipeOut");
+				$(".alertmsg").stop(true).hide();
+			}, 100);
+			setTimeout(function(){
+				$(".viruses").children().not(".ebolavirus").stop(true).hide();
+				$(".ebolavirus").stop(true).addClass("playIn");
+				$(".ebolavirus").stop(true).show();
+			}, 1000);
+		}
+		else if ($("#myText").val() == "HANTA")
+		{
+			setTimeout(function(){
+				$(".viruses").children().not(".hantavirus").stop(true).removeClass("playIn");
+				$(".viruses").children().not(".hantavirus").stop(true).addClass("wipeOut");
+				$(".alertmsg").stop(true).hide();
+			}, 100);
+			setTimeout(function(){
+				$(".viruses").children().not(".ebolavirus").stop(true).hide();
+				$(".hantavirus").stop(true).addClass("playIn");
+				$(".hantavirus").stop(true).show();
+			}, 1000);
+		}
+		else if ($("#myText").val() == "INFLUENZA")
+		{
+			setTimeout(function(){
+				$(".viruses").children().not(".influenzavirus").stop(true).removeClass("playIn");
+				$(".viruses").children().not(".influenzavirus").stop(true).addClass("wipeOut");
+				$(".alertmsg").stop(true).hide();
+			}, 100);
+			setTimeout(function(){
+				$(".viruses").children().not(".influenzavirus").stop(true).hide();
+				$(".influenzavirus").stop(true).addClass("playIn");
+				$(".influenzavirus").stop(true).show();
+			}, 1000);
+		}
+		else if ($("#myText").val() == "POLIO")
+		{
+			setTimeout(function(){
+				$(".viruses").children().not(".poliovirus").stop(true).removeClass("playIn");
+				$(".viruses").children().not(".poliovirus").stop(true).addClass("wipeOut");
+				$(".alertmsg").stop(true).hide();
+			}, 100);
+			setTimeout(function(){
+				$(".viruses").children().not(".poliovirus").stop(true).hide();
+				$(".poliovirus").stop(true).addClass("playIn");
+				$(".poliovirus").stop(true).show();
+			}, 1000);
+		}
+		else if ($("#myText").val() == "MEASLES")
+		{
+			setTimeout(function(){
+				$(".viruses").children().not(".measlevirus").stop(true).removeClass("playIn");
+				$(".viruses").children().not(".measlevirus").stop(true).addClass("wipeOut");
+				$(".alertmsg").stop(true).hide();
+			}, 100);
+			setTimeout(function(){
+				$(".viruses").children().not(".measlevirus").stop(true).hide();
+				$(".measlevirus").stop(true).addClass("playIn");
+				$(".measlevirus").stop(true).show();
+			}, 1000);
+		}
+		else
+		{	
+			$(".introvirus").stop(true).addClass("playIn");
+			$(".introvirus").stop(true).show();
+			$(".viruses").children().not(".introvirus").stop(true).hide();
+			$(".alertmsg").stop(true).show();
+		}
+	});
+});
+
+function revealviruslist() {
+	$(".viruslist").css("top", "0px");
+	setTimeout(function(){
+		document.getElementById("virushint").innerHTML = "Click anywhere above to close list!";
+	}, 1000);
+}
+
+function maskviruslist() {
+	$(".viruslist").css("top", "-740px");
+	document.getElementById("virushint").innerHTML = "Click here to view types of viruses!";
+}
+</script>
+	
+</body>
+</html>

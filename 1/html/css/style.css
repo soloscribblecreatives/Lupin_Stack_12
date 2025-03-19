@@ -1,0 +1,226 @@
+	* {
+		margin: 0px;
+		padding: 0px;
+	}
+	
+	.bg {
+		position: relative;
+		background-image: url("../images/BG.png");
+		text-align: center;
+		margin: auto;
+		width: 1024px;
+		height: 768px;
+		z-index: 1;
+	}
+	
+	.enclose {
+		position: relative;
+		margin: 0px;
+		padding: 0px;
+		top: 20px;
+	}
+	
+	.correct {
+		position: absolute;
+		margin-top: 30px;
+		margin-left: 750px;
+		height: 140px;
+		width: 186px;
+		animation-name: jackInTheBox;
+		-webkit-animation-name: jackInTheBox;
+		animation-duration: 1s;
+		-webkit-animation-duration: 1s;
+		animation-delay: 0s;
+		-webkit-animation-delay: 0s;
+		animation-iteration-count: 1;
+		-webkit-animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+		-webkit-animation-fill-mode: forwards;
+		display: none;
+		z-index:5;
+	}
+		
+	.wrong {
+		position: absolute;
+		margin-top: 30px;
+		margin-left: 750px;
+		height: 146px;
+		width: 186px;
+		animation-name: jackInTheBox;
+		-webkit-animation-name: jackInTheBox;
+		animation-duration: 1s;
+		-webkit-animation-duration: 1s;
+		animation-delay: 0s;
+		-webkit-animation-delay: 0s;
+		animation-iteration-count: 1;
+		-webkit-animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+		-webkit-animation-fill-mode: forwards;
+		display: none;
+		z-index:5;
+	}
+	
+	.winnerbox {
+		position: absolute;
+		margin: 0px auto;
+		top: 0px;
+		padding: 0px;
+		height: 768px;
+		width: 1024px;
+		background-image: url("../images/Congrats.png");
+		animation-name: zoomIn;
+		-webkit-animation-name: zoomIn;
+		animation-duration: 1s;
+		-webkit-animation-duration: 1s;
+		animation-delay: 0s;
+		-webkit-animation-delay: 0s;
+		animation-iteration-count: 1;
+		-webkit-animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+		-webkit-animation-fill-mode: forwards;
+		display: none;
+		z-index:5;
+	}
+	
+	.winner {
+		position: relative;
+		top: 200px;
+		font-family: Squeaky Chalk Sound;
+		font-size: 5em;
+		color: #fff;	
+		text-align: center;
+		margin: 0px auto;
+		line-height: 2em;
+		text-shadow: 10px 10px 10px rgba(0, 0, 0, .5);
+		animation-name: zoomIn;
+		-webkit-animation-name: zoomIn;
+		animation-duration: 1s;
+		-webkit-animation-duration: 1s;
+		animation-delay: 0s;
+		-webkit-animation-delay: 0s;
+		animation-iteration-count: 1;
+		-webkit-animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+		-webkit-animation-fill-mode: forwards;
+		z-index:6;
+	}
+	
+	.replay {
+		position: relative;
+		top: 300px;
+		font-family: Lato;
+		font-size: 2em;
+		color: #fff;	
+		text-align: center;
+		margin: 0px auto;
+		line-height: 2em;
+		cursor: pointer;
+		outline: none;
+		text-shadow: 2px 2px 3px rgba(0, 0, 0, .5);
+		animation-name: pulse;
+		-webkit-animation-name: pulse;
+		animation-duration: 1s;
+		-webkit-animation-duration: 1s;
+		animation-delay: 0s;
+		-webkit-animation-delay: 0s;
+		animation-iteration-count: infinite;
+		-webkit-animation-iteration-count: infinite;
+		animation-fill-mode: forwards;
+		-webkit-animation-fill-mode: forwards;
+		z-index:8;
+	}
+	
+	.glowshade {
+		position: absolute;
+		padding: 0px;
+		margin: 0px;
+		opacity: 0.8;
+		filter: blur(5px);
+		animation-name: lightpulse;
+		-webkit-animation-name: lightpulse;
+		animation-duration: 1s;
+		-webkit-animation-duration: 1s;
+		animation-delay: 0s;
+		-webkit-animation-delay: 0s;
+		animation-iteration-count: infinite;
+		-webkit-animation-iteration-count: infinite;
+		animation-fill-mode: forwards;
+		-webkit-animation-fill-mode: forwards;
+		z-index:1;
+	}
+	
+	input {
+		position: relative;
+		margin: 20px;
+		z-index: 5;
+		outline: none;
+	}
+	
+	input:hover {
+		animation-name: rubberBand;
+		-webkit-animation-name: rubberBand;
+		animation-duration: 0.3s;
+		-webkit-animation-duration: 0.3s;
+		animation-delay: 0s;
+		-webkit-animation-delay: 0s;
+		animation-iteration-count: 1;
+		-webkit-animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+		-webkit-animation-fill-mode: forwards;
+	}
+	
+	label {
+		font-family: papyrus;
+		font-size: 2em;
+		line-height: 2em;
+		z-index: 5;
+	}
+		
+	p {
+		font-family: Viner Hand ITC;
+		font-weight: bold;
+		font-size: 2em;
+		color: #fff;
+		z-index: 5;
+	}
+	
+	
+	
+@-webkit-keyframes lightpulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes lightpulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.lightpulse {
+  -webkit-animation-name: lightpulse;
+  animation-name: lightpulse;
+}

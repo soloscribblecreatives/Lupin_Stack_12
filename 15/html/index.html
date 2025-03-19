@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="twentytwenty.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="jquery.event.move.js"></script>
+    <script src="jquery.twentytwenty.js"></script>
+    
+    <script type="text/javascript">
+        $(function(){
+            $(".image[data-orientation!='vertical']").twentytwenty({default_offset_pct:0.5});
+        })
+    </script>
+	
+</head>
+
+<body>
+   <div class="image">
+      <img src="Scene.png">
+      <img src="Scenebw.png">
+   </div>    
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.title, .sub-title {
+  position: relative;
+  text-align: center;
+  width: 320px;
+  color: #000;
+  border: 1px solid #000;
+  text-shadow: 2px 2px 5px #fff;
+  padding: 10px 15px;
+  margin-top: 5px;
+  z-index: 2;
+}
+
+.foodbg {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url('FoodBG.png');
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(0px);
+  z-index: 0;
+}
+
+/*-------------Card-1--------------*/
+
+.flip-card-bg {
+  position: absolute;
+  background-color: #000;
+  background-image: url('Food1.png');
+  width: 150px;
+  height: 150px;
+  perspective: 1000px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.flip-card {
+  position: absolute;
+  margin-left: 3px;
+  background-color: transparent;
+  width: 150px;
+  height: 150px;
+  perspective: 1000px;
+  z-index: 4;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  transform-origin: 100%;
+}
+
+/*-------------Card-2--------------*/
+
+.flip-card-bg1 {
+  position: absolute;
+  margin-left: 306px;
+  background-color: #000;
+  background-image: url('Food2.png');
+  width: 150px;
+  height: 150px;
+  perspective: 1000px;
+  box-shadow: 0 5px 12px 0 rgba(0, 0, 0, 0.6), 0 8px 20px 0 rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.flip-card1 {
+  position: absolute;
+  margin-left: 306px;
+  margin-top: 3px;
+  background-color: transparent;
+  width: 150px;
+  height: 150px;
+  perspective: 1000px;
+  z-index: 4;
+}
+
+.flip-card-inner1 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  transform-origin:  0% 100%;
+}
+
+.textinv {
+  position: relative;
+  top: 10px;
+  -moz-transform: scale(-1, -1);
+  -o-transform: scale(-1, -1);
+  -webkit-transform: scale(-1, -1);
+  transform: scale(-1, -1);
+}
+
+/*-------------Card-3--------------*/
+
+.flip-card-bg2 {
+  position: absolute;
+  margin-left: 306px;
+  margin-top: 306px;
+  background-color: #000;
+  background-image: url('Food3.png');
+  width: 150px;
+  height: 150px;
+  perspective: 1000px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.flip-card2 {
+  position: absolute;
+  margin-left: 309px;
+  margin-top: 306px;
+  background-color: transparent;
+  width: 150px;
+  height: 150px;
+  perspective: 1000px;
+  z-index: 4;
+}
+
+.flip-card-inner2 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  transform-origin: 100%;
+}
+
+/*-------------Card-3--------------*/
+
+.flip-card-bg3 {
+  position: absolute;
+  margin-left: 612px;
+  margin-top: 306px;
+  background-color: #000;
+  background-image: url('Food4.png');
+  width: 150px;
+  height: 150px;
+  perspective: 1000px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.flip-card3 {
+  position: absolute;
+  margin-left: 612px;
+  margin-top: 303px;
+  background-color: transparent;
+  width: 150px;
+  height: 150px;
+  perspective: 1000px;
+  z-index: 4;
+}
+
+.flip-card-inner3 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  transform-origin: 100% 0%;
+}
+
+/*-------------Common--------------*/
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+  z-index: 2;
+}
+
+.flip-card-back {
+  background-color: #000;
+  font-size: 0.7em;
+  color: white;
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+.flip-card-back h1, p {
+  margin-top: 20px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="foodbg"></div>
+<h1 class="title">Card Flip Food Menu</h1>
+<h3 class="sub-title">Hover Over First Image</h3>
+
+<div class="flip-card-bg" id="flip-card-bg"></div>
+<div class="flip-card" id="flip-card">
+  <div class="flip-card-inner" id="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="Food1.png" alt="Avatar" style="width:150px;height:150px;">
+    </div>
+    <div class="flip-card-back">
+      <h1>SnackPack</h1> 
+      <p>Masala Sticks With Coke</p> 
+      <p>Starter Snack Satire!</p>
+    </div>
+  </div>
+</div>
+
+<div class="flip-card-bg1" id="flip-card-bg1"></div>
+<div class="flip-card1" id="flip-card1">
+  <div class="flip-card-inner1" id="flip-card-inner1">
+    <div class="flip-card-front">
+      <img src="Food2.png" alt="Avatar" style="width:150px;height:150px;">
+    </div>
+    <div class="flip-card-back">
+      <div class="textinv">
+		<h1>BurgerBlast</h1> 
+		<p>Brown Bread Infinity</p> 
+		<p>Happy Brunch Course!</p>
+	  </div>
+    </div>
+  </div>
+</div>
+
+<div class="flip-card-bg2" id="flip-card-bg2"></div>
+<div class="flip-card2" id="flip-card2">
+  <div class="flip-card-inner2" id="flip-card-inner2">
+    <div class="flip-card-front">
+      <img src="Food3.png" alt="Avatar" style="width:150px;height:150px;">
+    </div>
+    <div class="flip-card-back">
+      <h1>PanPieBites</h1> 
+      <p>Stacks Of Heaven</p> 
+      <p>Tea Time Toast!</p>
+    </div>
+  </div>
+</div>
+
+<div class="flip-card-bg3" id="flip-card-bg3"></div>
+<div class="flip-card3" id="flip-card3">
+  <div class="flip-card-inner3" id="flip-card-inner3">
+    <div class="flip-card-front">
+      <img src="Food4.png" alt="Avatar" style="width:150px;height:150px;">
+    </div>
+    <div class="flip-card-back">
+      <div class="textinv">
+		<h1>LambLimbs</h1> 
+		<p>Dibs On Ribs</p> 
+		<p>Red Dine With Red Wine!</p>
+	  </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.getElementById('flip-card').onmouseover = function(){
+document.getElementById('flip-card-inner').style.transform = 'rotateY(180deg)';
+document.getElementById('flip-card-inner').style.transitionDelay = '0.0s';
+document.getElementById('flip-card-inner1').style.transform = 'rotateX(-180deg)';
+document.getElementById('flip-card-inner1').style.transitionDelay = '0.3s';
+document.getElementById('flip-card-inner2').style.transform = 'rotateY(180deg)';
+document.getElementById('flip-card-inner2').style.transitionDelay = '0.6s';
+document.getElementById('flip-card-inner3').style.transform = 'rotateX(180deg)';
+document.getElementById('flip-card-inner3').style.transitionDelay = '0.9s';
+}
+
+document.getElementById('flip-card').onmouseout = function(){
+document.getElementById('flip-card-inner').style.transform = '';
+document.getElementById('flip-card-inner').style.transitionDelay = '0.9s';
+document.getElementById('flip-card-inner1').style.transform = '';
+document.getElementById('flip-card-inner1').style.transitionDelay = '0.6s';
+document.getElementById('flip-card-inner2').style.transform = '';
+document.getElementById('flip-card-inner2').style.transitionDelay = '0.3s';
+document.getElementById('flip-card-inner3').style.transform = '';
+document.getElementById('flip-card-inner3').style.transitionDelay = '0.0s';
+}
+
+$('#d').hover(
+  function(){
+  	   $('#c').css('background', '#F00')
+   }, 
+   function() { 
+       $('#c').css('background', '')
+});
+
+</script>
+
+</body>
+</html>

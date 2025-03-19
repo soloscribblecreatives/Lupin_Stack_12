@@ -1,0 +1,57 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+.dashboard {
+	position: absolute;
+	width: 1024px;
+	height: 768px;
+	z-index: 1;
+}
+
+.tab1 {
+	position: absolute;
+  left: 59px;
+  top: 603px;
+  width: 295px;
+  height: 65px;
+	animation: zoomIn 0.5s;
+    animation-delay: 0s;
+    animation-fill-mode: both;
+	z-index: 8;
+}
+
+.tab2 {
+	position: absolute;
+  left: 365px;
+  top: 603px;
+  width: 295px;
+  height: 65px;
+	animation: zoomIn 0.5s;
+    animation-delay: 0s;
+    animation-fill-mode: both;
+	z-index: 8;
+}
+
+.tab3 {
+	position: absolute;
+  left: 670px;
+  top: 603px;
+  width: 295px;
+  height: 65px;
+	animation: zoomIn 0.5s;
+    animation-delay: 0s;
+    animation-fill-mode: both;
+	z-index: 8;
+}
+
+@keyframes flashLong {
+  0%,  100% {
+    opacity: 0;
+  }
+
+  25%, 50%, 75% {
+    opacity: 1;
+  }
+}
