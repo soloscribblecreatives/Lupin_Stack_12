@@ -1,0 +1,137 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+.s1 {
+	position: absolute;
+	width: 1080px;
+	height: 810px;
+	z-index: 1;
+}
+
+.s2 {
+	position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 1080px;
+  height: 810px;
+	animation: flash 4s infinite;
+	animation-delay: 0.2s;
+	animation-fill-mode: both;
+	z-index: 5;
+}
+
+.s3 {
+	position: absolute;
+  left: 266px;
+  top: 13px;
+  width: 460px;
+  height: 115px;
+  	animation: fadeInRight 0.5s;
+	animation-delay: 0.5s;
+	animation-fill-mode: both;
+	z-index: 15;
+}
+
+.s4 {
+	position: absolute;
+  left: 610px;
+  top: 97px;
+  width: 218px;
+  height: 31px;
+    animation: zoomIn 0.5s;
+	animation-delay: 0.8s;
+	animation-fill-mode: both;
+	z-index: 15;
+}
+
+.s5 {
+	position: absolute;
+  left: 144px;
+  top: 170px;
+  width: 742px;
+  height: 34px;
+	animation: fadeInUp 0.5s;
+	animation-delay: 2s;
+	animation-fill-mode: both;
+	z-index: 15;
+}
+
+.s6 {
+	position: absolute;
+  left: 83px;
+  top: 230px;
+  width: 906px;
+  height: 187px;
+	animation: fadeIn 0.5s;
+	animation-delay: 2s;
+	animation-fill-mode: both;
+	z-index: 15;
+}
+
+.s7 {
+	position: absolute;
+  left: 83px;
+  top: 282px;
+  width: 377px;
+  height: 58px;
+	animation: zoomIn 0.5s;
+	animation-delay: 2s;
+	animation-fill-mode: both;
+	z-index: 15;
+}
+
+.s8 {
+	position: absolute;
+  left: 659px;
+  top: 293px;
+  width: 330px;
+  height: 57px;
+	animation: zoomIn 0.5s;
+	animation-delay: 2s;
+	animation-fill-mode: both;
+	z-index: 15;
+}
+
+.s9 {
+	position: absolute;
+  left: 59px;
+  top: 458px;
+  width: 963px;
+  height: 129px;
+	animation: fadeInUp 0.5s;
+	animation-delay: 3s;
+	animation-fill-mode: both;
+	z-index: 15;
+}
+
+.s10 {
+	position: absolute;
+  left: 217px;
+  top: 635px;
+  width: 655px;
+  height: 84px;
+	animation: zoomIn 0.5s;
+	animation-delay: 3.5s;
+	animation-fill-mode: both;
+	z-index: 15;
+}
+
+.s11 {
+  position: absolute;
+  left: 134px;
+  top: 718px;
+  width: 823px;
+  height: 73px;
+  z-index: 15;
+}
+
+.s12 {
+  position: absolute;
+  left: 556px;
+  top: 228px;
+  width: 10px;
+  height: 389px;
+  z-index: 15;
+}
