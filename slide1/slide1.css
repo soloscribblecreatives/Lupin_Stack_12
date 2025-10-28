@@ -3,6 +3,21 @@
 	padding: 0px;
 }
 
+.time {
+	position: absolute;
+	left: 513px;
+	top: 388px;
+    font-size: 60px;
+    font-weight: bold;
+	text-align: center;
+	color: #fff;
+	animation: fadeIn 0.3s;
+    animation-delay: 0.5s;
+    animation-fill-mode: both;
+	display: none;
+	z-index: 7;
+}
+
 .video1 {
 	position: absolute;
 	left: 0px;
@@ -35,7 +50,7 @@
   top: 383px;
   width: 798px;
   height: 214px;
-  animation: zoomIn 0.5s;
+  animation: fadeInUp 0.3s;
   animation-delay: 0.2s;
   animation-fill-mode: both;
   display: none;
