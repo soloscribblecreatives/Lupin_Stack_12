@@ -3,12 +3,18 @@
 	padding: 0px;
 }
 
+@font-face {
+	font-family: "Akhand-Bold";
+    src: url("../slide1/Akhand-Bold.otf") format("opentype");
+}
+
 .time {
 	position: absolute;
-	left: 513px;
-	top: 388px;
-    font-size: 60px;
+	left: 528px;
+	top: 399px;
+    font-size: 50px;
     font-weight: bold;
+	font-family: "Akhand-Bold";
 	text-align: center;
 	color: #fff;
 	animation: fadeIn 0.3s;
