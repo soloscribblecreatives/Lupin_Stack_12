@@ -5,7 +5,7 @@
 <meta http-equiv="cache-control" content="max-age=200"/>
 <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
-<title>Viksit Bharat</title>
+<title>Dapaturn</title>
 <link rel="stylesheet" type="text/css" href="animate.css" media="screen"/>
 <link rel="stylesheet" type="text/css" href="global.css" media="screen"/>
 
@@ -25,15 +25,13 @@
     <div class="box">
       <div class="slide_jumper">
 		  <div class="slides"><img src="thumbs/01.png" alt=""></div>
-		  <div class="slides"><img src="thumbs/02.png" alt=""></div>
       </div>
     </div>
     <div class="box_btn"></div>
-	<div id="myconsole"></div>
-	<div id="click_through"></div>
   </div>
 </div>
-
+<div id="myconsole"></div>
+<div id="click_through" > </div>
 <script src="global.js" type="text/javascript" language="javascript"></script> 
 <script>
 
@@ -45,7 +43,7 @@ var selectedContentPath = 'slide1/';
 //  document.getElementById("main_content").innerHTML='<object type="text/html" width="1080px" height="810px" data="'+selectedContentPath+"Dlight1.htm"+'"></object>';
 
 
-$("#main_content").html('<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div class="s1"><img src="slide1/s1.png" width="1080" height="810" alt=""/></div><div class="s2"><img src="slide1/s2.png"/></div><div class="s3 fadeInUp"><img src="slide1/s3.png"/></div><div class="s4 zoomIn"><img src="slide1/s4.png"/></div><div class="s5"><img src="slide1/s5.png"/></div><div class="s6"><img src="slide1/s6.png"/></div><div class="s7"><img src="slide1/s7.png"/></div><div class="s8"><img src="slide1/s8.png"/></div><div class="s9"><img src="slide1/s9.png"/></div><div class="s10"><img src="slide1/s10.png"/></div><div class="s11"><img src="slide1/s11.png"/></div><div class="clickMe" onclick="clickMe()"></div>');
+$("#main_content").html('<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div class="button1" onclick="playVid1()"></div><div class="video1"><video onended="myFunction1()" id="startVideo" width="1080" height="810" source src="slide1/v1.mp4" type="video/mp4"></video></div><div class="video2"><video onended="myFunction2()" id="endVideo" width="1080" height="810" source src="slide1/v2.mp4" type="video/mp4"></video></div><div class="q1"><img src="slide1/q1.png"/></div><div class="o1" onclick="op1()"><img src="slide1/o1.png"/></div><div class="p1"><img src="slide1/p1.png"/></div><div class="o2" onclick="op2()"><img src="slide1/o2.png"/></div><div class="p2"><img src="slide1/p2.png"/></div><div class="o3" onclick="op3()"><img src="slide1/o3.png"/></div><div class="p3"><img src="slide1/p3.png"/></div><div class="o4" onclick="op4()"><img src="slide1/o4.png"/></div><div class="p4"><img src="slide1/p4.png"/></div>');
 
 });
 </script> 
