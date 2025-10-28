@@ -9,11 +9,11 @@
 }
 
 .time {
-	position: absolute;
-	left: 528px;
-	top: 399px;
+	position: relative;
+	width: 100px;
+	left: 502px;
+	top: 400px;
     font-size: 50px;
-    font-weight: bold;
 	font-family: "Akhand-Bold";
 	text-align: center;
 	color: #fff;

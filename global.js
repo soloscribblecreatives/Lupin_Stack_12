@@ -413,6 +413,7 @@ function playVid1() {
 
 function myFunction1() {
 	setTimeout(function() {
+		timer();
 		document.getElementById("tickAudio").play();
 		$('.q1').css("display","block");
 		$('.o1').css("display","block");
@@ -425,41 +426,19 @@ function myFunction1() {
 			$('.op2').css("display","block");
 			$('.op3').css("display","block");
 			$('.op4').css("display","block");
-		}, 1000);
-		
-		$(document).ready(function() {
-		let counter = 30;
-
-		function formatNumber(num) {
-			return num < 10 ? "0" + num : num;
-		}
-
-		// Display initial time
-		$("#time").text(formatNumber(counter));
-
-		const timer = setInterval(function() {
-        counter--;
-        $("#time").text(formatNumber(counter));
-
-			if (counter <= 0) {
-				clearInterval(timer);
-				setTimeout(function() {
-				   op4();
-				}, 1500);
-			}
-		}, 1000);
-		});
+		}, 1000);	
 	}, 10000);
 };
 
 function op1() {
 	const a = document.getElementById("tickAudio"); a.pause(); a.currentTime = 0;
 	document.getElementById("loseAudio").play();
+	   $('.p1').css("display","block");
+	   $(".p1").addClass("selected");
 	   $('.op1').css("display","none");
 	   $('.op2').css("display","none");
 	   $('.op3').css("display","none");
 	   $('.op4').css("display","none");
-	$('.p1').css("display","block");
 	setTimeout(function() {
 	   $('.p4').css("display","block");
 	}, 1000);
@@ -483,11 +462,12 @@ function op1() {
 function op2() {
 	const a = document.getElementById("tickAudio"); a.pause(); a.currentTime = 0;
 	document.getElementById("loseAudio").play();
+	   $('.p2').css("display","block");
+	   $(".p2").addClass("selected");
 	   $('.op1').css("display","none");
 	   $('.op2').css("display","none");
 	   $('.op3').css("display","none");
 	   $('.op4').css("display","none");
-	$('.p2').css("display","block");
 	setTimeout(function() {
 	   $('.p4').css("display","block");
 	}, 1000);
@@ -511,11 +491,12 @@ function op2() {
 function op3() {
 	const a = document.getElementById("tickAudio"); a.pause(); a.currentTime = 0;
 	document.getElementById("loseAudio").play();
+	   $('.p3').css("display","block");
+	   $(".p3").addClass("selected");
 	   $('.op1').css("display","none");
 	   $('.op2').css("display","none");
 	   $('.op3').css("display","none");
 	   $('.op4').css("display","none");
-	$('.p3').css("display","block");
 	setTimeout(function() {
 	   $('.p4').css("display","block");
 	}, 1000);
@@ -539,13 +520,12 @@ function op3() {
 function op4() {
 	const a = document.getElementById("tickAudio"); a.pause(); a.currentTime = 0;
 	document.getElementById("winAudio").play();
+	   $('.p4').css("display","block");
+	   $(".p4").addClass("selected");
 	   $('.op1').css("display","none");
 	   $('.op2').css("display","none");
 	   $('.op3').css("display","none");
 	   $('.op4').css("display","none");
-	setTimeout(function() {
-	   $('.p4').css("display","block");
-	}, 0000);
 	setTimeout(function() {
 	   $('.q1').css("display","none");
 	   $('.o1').css("display","none");
@@ -561,4 +541,26 @@ function op4() {
 	   $(".video2").css("display","block");
 	   document.getElementById("endVideo").play();
 	}, 3000);
+}
+
+function timer() {
+	let counter = 30;
+	function formatNumber(num) {
+		return num < 10 ? "0" + num : num;
+	}
+	// Display initial time
+	$("#time").text(formatNumber(counter));
+	const timer = setInterval(function() {
+       counter--;
+       $("#time").text(formatNumber(counter));
+		if (counter <= 0) {
+			clearInterval(timer);
+			setTimeout(function() {
+				  op4();
+			}, 1500);
+		}
+		else if ($(".p1").hasClass("selected") || $(".p2").hasClass("selected") || $(".p3").hasClass("selected") || $(".p4").hasClass("selected")){
+			clearInterval(timer);
+		}
+	}, 1000);
 }
