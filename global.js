@@ -136,7 +136,7 @@ if(direction == 'b') {
   "callback" : "checkLastPgFn"
   };
 
-	window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe
+	//window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe
 	
 		//window.location = "js-call:" + "1" + ":" + encodeURIComponent(JSON.stringify({query:'NODATA', type:'brandNavigation', callback:'checkLastPgFn'}));
     }else{
@@ -153,16 +153,16 @@ if(direction == 'b') {
   "callback" : "checkLastPgFn"
   };
 
-	window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe
+	//window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe
 	}
 	
 }else {
 	
 
-	if(page_id <= 1){
+	if(page_id <= 2){
 		page_id = page_id + 1;
 		//alert(page_id);
-		if(page_id == 2){
+		if(page_id == 3){
             flag=1;
         }
 	}
@@ -182,7 +182,7 @@ if(direction == 'b') {
   };
 
 
-	window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe
+	//window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe
 		 //window.location = "js-call:" + "1" + ":" + encodeURIComponent(JSON.stringify({query:'NODATA', type:'brandNavigation', callback:'checkLastPgFn'}));
     }else{
         localStorage.setItem("gotoNextPrevBrand" ,0);
@@ -198,7 +198,7 @@ if(direction == 'b') {
   "callback" : "checkLastPgFn"
   };
 
-	window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe
+	//window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe
   
     }
 
@@ -249,9 +249,11 @@ currentSlide();
 var selectedContentPath='';
 switch(pg_id){
 	case 1:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div class="button1" onclick="playVid1()"></div><div class="video1"><video autoplay onstart="myFunction1()" id="startVideo" width="1080" height="810" source src="slide1/v1.mp4" type="video/mp4"></video></div><div class="video2"><video onended="myFunction2()" id="endVideo" width="1080" height="810" source src="slide1/v2.mp4" type="video/mp4"></video></div><audio id="loseAudio" source src="slide1/a1.mp3" type="audio/mpeg"></audio><audio id="winAudio" source src="slide1/a2.mp3" type="audio/mpeg"></audio><div class="q1"><img src="slide1/q1.png"/></div><div class="o1"><img src="slide1/o1.png"/></div><div class="p1"><img src="slide1/p1.png"/></div><div class="o2"><img src="slide1/o2.png"/></div><div class="p2"><img src="slide1/p2.png"/></div><div class="o3"><img src="slide1/o3.png"/></div><div class="p3"><img src="slide1/p3.png"/></div><div class="o4"><img src="slide1/o4.png"/></div><div class="p4"><img src="slide1/p4.png"/></div><div class="op1" onclick="op1()"></div><div class="op2" onclick="op2()"></div><div class="op3" onclick="op3()"></div><div class="op4" onclick="op4()"></div><div class="counter"><div id="time" class="time">30</div></div>';
+	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div class="s1"><img src="slide1/s1.png" width="1080" height="810" alt=""/></div><div class="s2"><img src="slide1/s2.png"/></div><div class="s3"><img src="slide1/s3.gif"/></div><div class="s4"><img src="slide1/s4.png"/></div><div class="s5"><img src="slide1/s5.png"/></div><div class="s6"><img src="slide1/s6.png"/></div>';
 	break;
-
+	case 2:
+	content='<link rel="stylesheet" type="text/css" href="slide2/slide2.css" media="screen"/><div class="s1"><img src="slide2/s1.png" width="1080" height="810" alt=""/></div><div class="s2"><img src="slide2/s2.png"/></div><div class="s3"><img src="slide2/s3.png"/></div><div class="s4"><img src="slide2/s4.gif"/></div><div class="s5"><img src="slide2/s5.png"/></div><div class="s6"><img src="slide2/s6.png"/></div><div class="s7"><img src="slide2/s7.png"/></div><div class="s8"><img src="slide2/s8.png"/></div><div class="s9"><img src="slide2/s9.png"/></div><div class="s10"><img src="slide2/s10.png"/></div>';
+	break;
 }
 
 return content;
@@ -290,7 +292,7 @@ function open_page(url,page_id){
   "callback" : "checkLastPgFn"
   };
 
-	window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe
+	//window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe
 
 	 $("#wrapper").attr("rel",page_id);
 	 var content="";
@@ -403,164 +405,3 @@ $(document).ready(function(){
 		$('.touchbtn').css("display","block");
 	})
 })
-
-/*--------------------------Javascript Animation-----------------------------*/
-
-function playVid1() {
-	document.getElementById("startVideo").play();
-	$('.button1').css("display","none");
-}
-
-function myFunction1() {
-	setTimeout(function() {
-		timer();
-		document.getElementById("tickAudio").play();
-		$('.q1').css("display","block");
-		$('.o1').css("display","block");
-		$('.o2').css("display","block");
-		$('.o3').css("display","block");
-		$('.o4').css("display","block");
-		$('.time').css("display","block");
-		setTimeout(function() {
-			$('.op1').css("display","block");
-			$('.op2').css("display","block");
-			$('.op3').css("display","block");
-			$('.op4').css("display","block");
-		}, 1000);	
-	}, 10000);
-};
-
-function op1() {
-	const a = document.getElementById("tickAudio"); a.pause(); a.currentTime = 0;
-	document.getElementById("loseAudio").play();
-	   $('.p1').css("display","block");
-	   $(".p1").addClass("selected");
-	   $('.op1').css("display","none");
-	   $('.op2').css("display","none");
-	   $('.op3').css("display","none");
-	   $('.op4').css("display","none");
-	setTimeout(function() {
-	   $('.p4').css("display","block");
-	}, 1000);
-	setTimeout(function() {
-	   $('.q1').css("display","none");
-	   $('.o1').css("display","none");
-	   $('.p1').css("display","none");
-	   $('.o2').css("display","none");
-	   $('.p2').css("display","none");
-	   $('.o3').css("display","none");
-	   $('.p3').css("display","none");
-	   $('.o4').css("display","none");
-	   $('.p4').css("display","none");
-	   $(".video1").css("display","none");
-	   const a = document.getElementById("startVideo"); a.pause(); a.currentTime = 0;
-	   $(".video2").css("display","block");
-	   document.getElementById("endVideo").play();
-	}, 4000);
-}
-
-function op2() {
-	const a = document.getElementById("tickAudio"); a.pause(); a.currentTime = 0;
-	document.getElementById("loseAudio").play();
-	   $('.p2').css("display","block");
-	   $(".p2").addClass("selected");
-	   $('.op1').css("display","none");
-	   $('.op2').css("display","none");
-	   $('.op3').css("display","none");
-	   $('.op4').css("display","none");
-	setTimeout(function() {
-	   $('.p4').css("display","block");
-	}, 1000);
-	setTimeout(function() {
-	   $('.q1').css("display","none");
-	   $('.o1').css("display","none");
-	   $('.p1').css("display","none");
-	   $('.o2').css("display","none");
-	   $('.p2').css("display","none");
-	   $('.o3').css("display","none");
-	   $('.p3').css("display","none");
-	   $('.o4').css("display","none");
-	   $('.p4').css("display","none");
-	   $(".video1").css("display","none");
-	   const a = document.getElementById("startVideo"); a.pause(); a.currentTime = 0;
-	   $(".video2").css("display","block");
-	   document.getElementById("endVideo").play();
-	}, 4000);
-}
-
-function op3() {
-	const a = document.getElementById("tickAudio"); a.pause(); a.currentTime = 0;
-	document.getElementById("loseAudio").play();
-	   $('.p3').css("display","block");
-	   $(".p3").addClass("selected");
-	   $('.op1').css("display","none");
-	   $('.op2').css("display","none");
-	   $('.op3').css("display","none");
-	   $('.op4').css("display","none");
-	setTimeout(function() {
-	   $('.p4').css("display","block");
-	}, 1000);
-	setTimeout(function() {
-	   $('.q1').css("display","none");
-	   $('.o1').css("display","none");
-	   $('.p1').css("display","none");
-	   $('.o2').css("display","none");
-	   $('.p2').css("display","none");
-	   $('.o3').css("display","none");
-	   $('.p3').css("display","none");
-	   $('.o4').css("display","none");
-	   $('.p4').css("display","none");
-	   $(".video1").css("display","none");
-	   const a = document.getElementById("startVideo"); a.pause(); a.currentTime = 0;
-	   $(".video2").css("display","block");
-	   document.getElementById("endVideo").play();
-	}, 4000);
-}
-
-function op4() {
-	const a = document.getElementById("tickAudio"); a.pause(); a.currentTime = 0;
-	document.getElementById("winAudio").play();
-	   $('.p4').css("display","block");
-	   $(".p4").addClass("selected");
-	   $('.op1').css("display","none");
-	   $('.op2').css("display","none");
-	   $('.op3').css("display","none");
-	   $('.op4').css("display","none");
-	setTimeout(function() {
-	   $('.q1').css("display","none");
-	   $('.o1').css("display","none");
-	   $('.p1').css("display","none");
-	   $('.o2').css("display","none");
-	   $('.p2').css("display","none");
-	   $('.o3').css("display","none");
-	   $('.p3').css("display","none");
-	   $('.o4').css("display","none");
-	   $('.p4').css("display","none");
-	   $(".video1").css("display","none");
-	   const a = document.getElementById("startVideo"); a.pause(); a.currentTime = 0;
-	   $(".video2").css("display","block");
-	   document.getElementById("endVideo").play();
-	}, 3000);
-}
-
-function timer() {
-	let counter = 30;
-	function formatNumber(num) {
-		return num < 10 ? "0" + num : num;
-	}
-	// Display initial time
-	$("#time").text(formatNumber(counter));
-	const timer = setInterval(function() {
-       counter--;
-       $("#time").text(formatNumber(counter));
-		if (counter <= 0) {
-			clearInterval(timer);
-			setTimeout(function() {
-				  op4();
-			}, 1500);
-		}
-		else if ($(".p1").hasClass("selected") || $(".p2").hasClass("selected") || $(".p3").hasClass("selected") || $(".p4").hasClass("selected")){
-			clearInterval(timer);
-		}
-	}, 1000);
-}
