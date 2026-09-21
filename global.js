@@ -172,10 +172,10 @@ if(direction == 'b') {
 }else {
 	
 
-	if(page_id <= 13){
+	if(page_id <= 1){
 		page_id = page_id + 1;
 		//alert(page_id);
-		if(page_id == 14){
+		if(page_id == 2){
             flag=1;
         }
 	}
@@ -279,43 +279,7 @@ currentSlide();
 var selectedContentPath='';
 switch(pg_id){
 	case 1:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div class="background"><img src="slide1/1.jpg" width="1080" height="810" alt=""></div>';
-	break;
-	case 2:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div class="background"><img src="slide2/1.jpg" width="1080" height="810" alt=""></div>';
-	break;
-	case 3:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div class="background"><img src="slide3/1.jpg" width="1080" height="810" alt=""></div>';
-	break;
-	case 4:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div class="background"><img src="slide4/1.jpg" width="1080" height="810" alt=""></div>';
-	break;
-	case 5:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div class="background"><img src="slide5/1.jpg" width="1080" height="810" alt=""></div>';
-	break;
-	case 6:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div class="background"><img src="slide6/1.jpg" width="1080" height="810" alt=""></div>';
-	break;
-	case 7:
-	content='<link rel="stylesheet" type="text/css" href="slide7/slide1.css" media="screen"/><div class="background"><img src="slide7/1.jpg" width="1080" height="810" alt=""></div><div class="hit_1"><img src="slide7/1.png" width="1080" height="810" alt=""/></div><div class="hit_pop1" onclick="hit_pop1()"></div><div class="hit_2"><img src="slide7/2.png" width="1080" height="810" alt=""/></div><div class="hit_pop2" onclick="hit_pop2()"></div><div class="hit_3"><img src="slide7/3.png" width="1080" height="810" alt=""/></div><div class="hit_pop3" onclick="hit_pop3()"></div><div class="hit_close1" onclick="hit_close1()"></div>';
-	break;
-	case 8:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div class="background"><img src="slide8/1.jpg" width="1080" height="810" alt=""></div>';
-	break;
-	case 9:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div class="background"><img src="slide9/1.jpg" width="1080" height="810" alt=""></div>';
-	break;
-	case 10:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div class="background"><img src="slide10/1.jpg" width="1080" height="810" alt=""></div>';
-	break;
-	case 11:
-	content='<link rel="stylesheet" type="text/css" href="slide11/slide1.css" media="screen"/><div class="background"><img src="slide11/1.jpg" width="1080" height="810" alt=""></div><div class="pin"><img src="slide11/pin.png"/></div><div class="kol" onclick="kol();"></div><div class="vid"><img src="slide11/close.png"/></div><video id="myVideo" width="985" height="554" src="slide11/1.mp4" controls></video><div class="closekol" onclick="closekol();"></div>';
-	break;
-	case 12:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div class="background"><img src="slide12/1.jpg" width="1080" height="810" alt=""></div>';
-	break;
-	case 13:
-	content='<link rel="stylesheet" type="text/css" href="slide13/slide1.css" media="screen"/><div class="background"><img src="slide13/1.jpg" width="1080" height="810" alt=""></div><div class="hit_1"><img src="slide13/1.png" width="1080" height="810" alt=""/></div><div class="hit_pop1" onclick="hit_pop1()"></div><div class="hit_2"><img src="slide13/2.png" width="1080" height="810" alt=""/></div><div class="hit_pop2" onclick="hit_pop2()"></div><div class="hit_close1" onclick="hit_close1()"></div><div class="takeCover" onclick="takeCover();"></div><div class="pin"><img src="slide13/pin.png"/></div><div class="kol" onclick="kol();"></div><div class="vid"><img src="slide13/close.png"/></div><video id="myVideo" width="985" height="554" src="slide13/1.mp4" controls></video><div class="closekol" onclick="closekol();"></div>';
+	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div class="textBg"><img src="slide1/s1.png" width="1080" height="810" alt=""></div><div class="doctorNameForm"><input type="text" id="doctorNameInput" class="doctorNameInput" maxlength="25" placeholder="Enter Doctor Name" autocomplete="off"><button type="button" id="doctorNameSubmit" class="doctorNameSubmit">Submit</button></div><video class="vidPlay" id="vidPlay" width="1080" height="810" preload="auto" playsinline webkit-playsinline><source src="slide1/s1.mp4" type="video/mp4"></video><div class="doctorNameDisplay" id="doctorNameDisplay"></div>';
 	break;
 }
 
@@ -559,3 +523,58 @@ function hit_close1() {
 function takeCover() {
 		open_page("",1);
 }
+
+/*--------------------- Doctor name entry -----------------------*/
+
+$(document).on('input', '#doctorNameInput', function() {
+
+	var doctorName = $(this).val();
+
+	// Allow only letters and spaces
+	doctorName = doctorName.replace(/[^a-zA-Z\s]/g, "");
+
+	// Capitalize first letter of each word and keep remaining letters lowercase
+	doctorName = doctorName.replace(/\b[a-zA-Z]+/g, function(word) {
+		return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+	});
+
+	$(this).val(doctorName);
+
+	if ($.trim(doctorName).length > 0) {
+		$('#doctorNameSubmit').css('display', 'block');
+	} else {
+		$('#doctorNameSubmit').css('display', 'none');
+	}
+});
+
+$(document).on('click', '#doctorNameSubmit', function() {
+
+	var doctorName = $.trim($('#doctorNameInput').val());
+
+	if (doctorName.length == 0) {
+		return;
+	}
+
+	var video = document.getElementById('vidPlay');
+
+	$('.doctorNameForm').css('display', 'none');
+	$('.textBg').css('display', 'none');
+	$('#doctorNameDisplay').text(doctorName).css('display', 'block');
+	$('#vidPlay').css('display', 'block');
+
+	if (video) {
+		video.currentTime = 0;
+
+		var playPromise = video.play();
+
+		if (playPromise !== undefined) {
+			playPromise.catch(function(error) {
+				console.log('Video could not play:', error);
+			});
+		}
+	}
+
+	setTimeout(function() {
+		$('#doctorNameDisplay').fadeOut(300);
+	}, 1500);
+});
